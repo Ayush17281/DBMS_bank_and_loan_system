@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking and Loan Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Banking and Loan Management System</h1>
+    <p>Manage customers, accounts, transactions and loans.</p>
+
+    <hr>
+
+    <h2>Customers</h2>
+    <button onclick="loadCustomers()">View Customers</button>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Address</th>
+            </tr>
+        </thead>
+        <tbody id="customers"></tbody>
+    </table>
+
+    <h2>Accounts</h2>
+    <button onclick="loadAccounts()">View Accounts</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer</th><th>Account Number</th><th>Type</th><th>Balance</th><th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="accounts"></tbody>
+    </table>
+
+    <h2>Create Transaction</h2>
+    <form id="transactionForm">
+        <label>Account:</label>
+        <select id="account_id" required>
+            <option value="">Select account</option>
+        </select>
+
+        <label>Type:</label>
+        <select id="transaction_type" required>
+            <option value="DEPOSIT">Deposit</option>
+            <option value="WITHDRAWAL">Withdrawal</option>
+        </select>
+
+        <label>Amount (₹):</label>
+        <input id="amount" type="number" min="0.01" step="0.01" required>
+
+        <label>Description:</label>
+        <input id="description" type="text" maxlength="255">
+
+        <button type="submit">Submit Transaction</button>
+        <p id="transactionMessage"></p>
+    </form>
+
+    <h2>Transactions</h2>
+    <button onclick="loadTransactions()">View Transactions</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Customer</th>
+                <th>Account</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody id="transactions"></tbody>
+    </table>
+
+    <h2>Loans</h2>
+    <button onclick="loadLoans()">View Loans</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer</th><th>Loan Type</th><th>Status</th><th>Amount</th><th>Interest</th>
+            </tr>
+        </thead>
+        <tbody id="loans"></tbody>
+    </table>
+
+    <h2>EMI Schedule</h2>
+    <button onclick="loadEMIs()">View EMI Schedule</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer</th><th>Loan ID</th><th>EMI Number</th>
+                <th>EMI Amount</th><th>Paid Amount</th><th>Due Date</th><th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="emis"></tbody>
+    </table>
+
+    <h2>Credit Scores</h2>
+    <button onclick="loadCreditScores()">View Credit Scores</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer</th><th>Credit Score</th><th>Score Date</th><th>Category</th>
+            </tr>
+        </thead>
+        <tbody id="creditScores"></tbody>
+    </table>
+
+    <h2>Fraud Alerts</h2>
+    <button onclick="loadAlerts()">View Fraud Alerts</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Alert ID</th>
+                <th>Transaction ID</th>
+                <th>Alert Type</th>
+                <th>Alert Time</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="alerts"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
